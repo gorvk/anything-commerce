@@ -1,30 +1,29 @@
-CREATE OR REPLACE FUNCTION read_all_users() RETURNS TABLE (
+CREATE OR REPLACE FUNCTION read_all_shops() RETURNS TABLE (
         _id INTEGER,
-        _first_name VARCHAR,
-        _last_name VARCHAR,
+        _shop_name VARCHAR,
         _email VARCHAR,
         _phone_number VARCHAR,
-        _user_address VARCHAR,
-        _is_seller BOOLEAN
+        _map_location VARCHAR,
+        _shop_type VARCHAR,
+        _shop_description VARCHAR
     ) LANGUAGE plpgsql AS $$ BEGIN RETURN QUERY
 SELECT *
-FROM Users;
+FROM Shops;
 END;
 $$;
-
-CREATE OR REPLACE FUNCTION read_user_by_column(
+CREATE OR REPLACE FUNCTION read_shop_by_column(
         IN key_column_name TEXT,
         IN key_value ANYELEMENT
     ) RETURNS TABLE (
         _id INTEGER,
-        _first_name VARCHAR,
-        _last_name VARCHAR,
+        _shop_name VARCHAR,
         _email VARCHAR,
         _phone_number VARCHAR,
-        _user_address VARCHAR,
-        _is_seller BOOLEAN
+        _map_location VARCHAR,
+        _shop_type VARCHAR,
+        _shop_description VARCHAR
     ) LANGUAGE plpgsql AS $$ BEGIN RETURN QUERY EXECUTE format(
-        'SELECT * FROM Users WHERE %I = $1',
+        'SELECT * FROM Shops WHERE %I = $1',
         key_column_name
     ) USING key_value;
 END;
