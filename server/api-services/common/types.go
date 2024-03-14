@@ -1,4 +1,4 @@
-package models
+package custom_types
 
 type User struct {
 	Id          int
