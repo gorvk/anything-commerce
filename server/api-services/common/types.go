@@ -1,4 +1,4 @@
-package custom_types
+package customTypes
 
 type User struct {
 	Id          int

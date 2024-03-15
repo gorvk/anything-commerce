@@ -1,4 +1,4 @@
-package userModel
+package user
 
 import (
 	"database/sql"

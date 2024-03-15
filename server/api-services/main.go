@@ -15,4 +15,6 @@ func init() {
 }
 
 func main() {
+	// controllers.UpdateUserByEmail("nstar2124@gmail.com", "first_name", "nstar")
+	// fmt.Println(controllers.GetAllUsers())
 }
