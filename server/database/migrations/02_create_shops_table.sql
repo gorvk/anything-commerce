@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS Shops CASCADE;
 CREATE TABLE Shops (
     id SERIAL PRIMARY KEY,
-    owner_id SERIAL NOT NULL,
+    owner_id INTEGER NOT NULL,
     shop_name VARCHAR(20) NOT NULL,
     email VARCHAR(20) UNIQUE NOT NULL,
     phone_number VARCHAR(20) UNIQUE,
