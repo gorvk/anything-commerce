@@ -10,7 +10,7 @@ import (
 
 var db *sql.DB
 
-func InitDB() {
+func ConnectDB() {
 	var err error
 	DB_CONNECTION_STRING := os.Getenv("DB_CONNECTION_STRING")
 	db, err = sql.Open("postgres", DB_CONNECTION_STRING)

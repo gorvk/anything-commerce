@@ -1,4 +1,4 @@
-package user
+package models
 
 import (
 	"database/sql"
@@ -7,12 +7,12 @@ import (
 	"github.com/gorvk/anything-commerce/server/api-services/initializers"
 )
 
-func UpdateUserByEmail(email string, columnName string, newValue string) (*sql.Rows, error) {
+func DeleteOrderById(id int) (*sql.Rows, error) {
 	db := initializers.GetDBInstance()
 	if db == nil {
 		return nil, nil
 	}
-	query := fmt.Sprintf("CALL update_user('%v', '%v', '%v', '%v')", columnName, "email", newValue, email)
+	query := fmt.Sprintf("CALL delete_order('%v', '%v')", "id", id)
 	rows, err := db.Query(query)
 	return rows, err
 }
